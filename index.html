@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="nav"><img src="images/menu.png"></a>
+            <a href="index.html">Home</a>
+            <a href="">Collections</a>
+            <a href="">New</a>
+        </nav>
+        <nav>
+            <img src="images/Group 53.png">
+        </nav>
+        <nav>
+            <a href=""><img src="images/Group 3.png"></a>
+            <a href="card" class="card">Card</a>
+            <a href=""><img src="images/Group 2.png"></a>
+            <a href=""><img src="images/Group 1.png"></a>
+        </nav>
+    </header>
+    <main>
+        <section class="section1">
+            <h4>MEN'S COLLECTION</h4>
+            <h4>WOMEN'S COLLECTION</h4>
+            <h4>KIDS' COLLECTION</h4>
+            <img src="images/search.png" width="365px" style="margin-top:36px;">
+        </section>
+        <section class="section2">
+            <div style="display: flex; justify-content: space-between; flex-direction: column;">
+                <div>
+                    <h1>NEW COLLECTION</h1>
+                    <h4>Summer</h4>
+                    <h4>2025</h4>
+                </div>
+                <div style="display: flex; gap:24px;">
+                    <div>
+                        <img src="images/shop.png" width="265px">
+                    </div>
+
+                    <div>
+
+                        <img src="images/Group 43.png">
+                        <img src="images/Group 42.png">
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="display: flex; gap:24px;">
+                <img src="images/post8.png" width="366px">
+                <img src="images/post2.png" width="366px">
+                <img src="images/post7.png" width="366px">
+            </div>
+        </section>
+        <section>
+            <h1>NEW THIS WEEK</h1>
+
+            <div class="slider-container">
+                <div class="image-list" id="imageList"></div>
+                <div class="buttons">
+                    <button id="prevBtn"><img src="images/Group 43.png"></button>
+                    <button id="nextBtn"><img src="images/Group 42.png"></button>
+                </div>
+            </div>
+
+            <script>
+                const images = [
+                    { src: 'images/post3.png', title: 'Гарчиг 1', subtitle: 'Дэд гарчиг 1' },
+                    { src: 'images/post4.png', title: 'Гарчиг 2', subtitle: 'Дэд гарчиг 2' },
+                    { src: 'images/post5.png', title: 'Гарчиг 3', subtitle: 'Дэд гарчиг 3' },
+                    { src: 'images/post9.png', title: 'Гарчиг 4', subtitle: 'Дэд гарчиг 4' },
+                    { src: 'images/post7.png', title: 'Гарчиг 5', subtitle: 'Дэд гарчиг 5' },
+                    { src: 'images/post8.png', title: 'Гарчиг 6', subtitle: 'Дэд гарчиг 6' },
+                    { src: 'images/post9.png', title: 'Гарчиг 7', subtitle: 'Дэд гарчиг 7' },
+                    { src: 'images/post3.png', title: 'Гарчиг 8', subtitle: 'Дэд гарчиг 8' },
+                    { src: 'images/post4.png', title: 'Гарчиг 9', subtitle: 'Дэд гарчиг 9' },
+                    { src: 'images/post5.png', title: 'Гарчиг 10', subtitle: 'Дэд гарчиг 10' },
+                ];
+
+
+                const imageList = document.getElementById('imageList');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+
+                const visibleCount = 5;
+                let startIndex = 0;
+
+                function updateSlider() {
+                    imageList.innerHTML = '';
+
+                    const visibleImages = images.slice(startIndex, startIndex + visibleCount);
+                    visibleImages.forEach(image => {
+                        const item = document.createElement('div');
+                        item.className = 'image-item';
+
+                        const img = document.createElement('img');
+                        img.src = image.src;
+
+                        const h1 = document.createElement('h1');
+                        h1.textContent = image.title;
+
+                        const h2 = document.createElement('h2');
+                        h2.textContent = image.subtitle;
+
+                        item.appendChild(img);
+                        item.appendChild(h1);
+                        item.appendChild(h2);
+
+                        imageList.appendChild(item);
+                    });
+
+                    prevBtn.disabled = startIndex === 0;
+                    nextBtn.disabled = startIndex + visibleCount >= images.length;
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    if (startIndex > 0) {
+                        startIndex--;
+                        updateSlider();
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (startIndex + visibleCount < images.length) {
+                        startIndex++;
+                        updateSlider();
+                    }
+                });
+
+                updateSlider(); // Initial load
+            </script>
+        </section>
+        <footer>
+
+        </footer>
+    </main>
+</body>
+
+</html>

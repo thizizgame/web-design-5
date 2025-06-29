@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Slider</title>
+  <style>
+    .slider-container {
+      width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .image-list {
+      display: flex;
+      overflow: hidden;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .image-list img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+ 
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="image-list" id="imageList"></div>
+    <div class="buttons">
+      <button id="prevBtn">Prev</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      'images/post1.png',
+      'images/post2.png',
+      'images/post3.png',
+      'images/post4.png',
+      'images/post5.png',
+      'images/post6.png',
+      'images/post7.png',
+      'images/post8.png',
+      'images/post9.png',
+      'images/post10.png',
+    ];
+
+    const imageList = document.getElementById('imageList');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    const visibleCount = 3;
+    let startIndex = 0;
+
+    function updateSlider() {
+      imageList.innerHTML = '';
+
+      const visibleImages = images.slice(startIndex, startIndex + visibleCount);
+      visibleImages.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        imageList.appendChild(img);
+      });
+
+      // Disable buttons when at ends
+      prevBtn.disabled = startIndex === 0;
+      nextBtn.disabled = startIndex + visibleCount >= images.length;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (startIndex > 0) {
+        startIndex--;
+        updateSlider();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (startIndex + visibleCount < images.length) {
+        startIndex++;
+        updateSlider();
+      }
+    });
+
+    updateSlider(); // Initial call
+  </script>
+</body>
+</html>
