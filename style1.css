@@ -582,6 +582,9 @@ footer {
     .view {
         margin-top: 52px;
     }
+    .slider-imageP{
+        width:60%;
+    }
 }
 
 @media (max-width: 540px) {
@@ -629,7 +632,7 @@ footer {
 @media (max-width:430px)
 {
     .slider-imageP{
-        width:60%;
+        width:48%;
     }
     .post-box {
         padding: 50px 120px;

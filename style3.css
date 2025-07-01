@@ -161,57 +161,9 @@ section {
     width:12px;
     height:12px;
 }
-.section1-text2
+.section2-details
 {
-    margin-top:32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.section1-text3
-{
-    display: flex;
-    align-items: center;
-    gap:15px;
-}
-.section1-text3 img{
-    width:33px;
-    height:33px;
-}
-.section2-container
-{
-    display: flex;
-    justify-content: space-between;
-    gap:66px;
-}
-.section2-category
-{
-    padding:24px 16px;
-    border-radius: 12px;
-    width:188px;
-    border:1px solid #C4C8CC;
-    height:100%;
-}
-.setcion2-line
-{
-    margin-top:24px;
-    margin-bottom:24px;
-}
-.section2-container .between h6
-{
-    margin-top:12px;
-    margin-bottom:12px;
-}
-.section2-posts
-{
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    gap:42px;
-}
-.section2-posts-pos
-{
-    margin-bottom:24px;
+    
 }
 footer {
     margin: 0 auto;
@@ -228,30 +180,39 @@ footer {
     padding-top: 82px;
     padding-bottom: 82px;
 }
-li
-{
-    list-style: none;
+.borderBlack {
+    color: white;
+    background-color: #1D2322;
+    padding: 14px 58px;
+    font-family: ClashGrotesk-Semibold;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+    border-radius: 8px;
 }
-li a{
-    color:#818B9C;
-    font-size:15px;
-    line-height: 160%;
+
+.borderBlack:hover {
+    opacity: 0.9;
 }
-li::before
-{
-    content: "";
-    background-image: url(images/li.png);
-    background-size: contain;
-    padding-left:24px;
-    padding-right:12px;
-    background-repeat: no-repeat;
-    width:24px;
-    height:24px;
+
+.borderWhite {
+    color: #1D2322;
+    background-color: white;
+    padding: 13px 57px;
+    font-family: ClashGrotesk-Semibold;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #1D2322;
+}
+
+.borderWhite:hover {
+    color: white;
+    background-color: #1D2322;
 }
 .nogoon {
     color: #1E4C2F;
-    font-size:15px;
-    margin-top:12px;
 }
 .border
 {
