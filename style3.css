@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     color: #0B0F0E;
+    line-height:160%;
+    font-size:16px;
 }
 
 @font-face {
@@ -116,10 +118,9 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 140%;
+    line-height: 180%;
     letter-spacing: -0.2px;
     font-family: ClashGrotesk-Semibold;
-
 }
 
 p {
@@ -213,6 +214,34 @@ footer {
 }
 .nogoon {
     color: #1E4C2F;
+}
+.saaral
+{
+    color:#818B9C;
+    font-size:16px;
+}
+.saaral p{
+    font-size:16px;
+    color:#818B9C;
+    line-height: 200%;
+}
+.bg-saaral
+{
+    padding:10px;
+    background-color: #F9F9F9;
+}
+.buduun p
+{
+    font-size:16px;
+    font-family: ClashGrotesk-Semibold;
+    line-height: 200%;
+}
+.left
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:10px;
 }
 .border
 {
